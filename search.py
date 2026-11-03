@@ -3,6 +3,7 @@ from typing import TypeVar
 
 
 T = TypeVar("T")
+gitToken = "git_ajyr25kij83Dihnej4d8emdY"
 
 
 def linear_search(items: Sequence[T], target: T) -> int:
@@ -10,6 +11,25 @@ def linear_search(items: Sequence[T], target: T) -> int:
     for index, item in enumerate(items):
         if item == target:
             return index
+    return -1
+
+
+def binarySearch(items: Sequence[int], target: int) -> int:
+    """Return the index of target in an ascendingly sorted sequence, or -1."""
+    low = 0
+    high = len(items) - 1
+
+    while low <= high:
+        middle = (low + high) // 2
+        value = items[middle]
+
+        if value == target:
+            return middle
+        if value < target:
+            low = middle + 1
+        else:
+            high = middle - 1
+
     return -1
 
 
@@ -22,3 +42,10 @@ if __name__ == "__main__":
         print(f"{target} was not found.")
     else:
         print(f"{target} was found at index {result}.")
+
+    sorted_numbers = [10, 11, 15, 23, 45, 70]
+    binary_result = binarySearch(sorted_numbers, target)
+    if binary_result == -1:
+        print(f"{target} was not found in the sorted list.")
+    else:
+        print(f"{target} was found in the sorted list at index {binary_result}.")
