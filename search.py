@@ -13,7 +13,7 @@ def linear_search(items: Sequence[T], target: T) -> int:
     return -1
 
 
-def binarySearch(items: Sequence[int], target: int) -> int:
+def binary_search(items: Sequence[int], target: int) -> int:
     """Return the index of target in an ascendingly sorted sequence, or -1."""
     low = 0
     high = len(items) - 1
@@ -43,9 +43,8 @@ if __name__ == "__main__":
         print(f"{target} was found at index {result}.")
 
     sorted_numbers = [10, 11, 15, 23, 45, 70]
-    binary_result = binarySearch(sorted_numbers, target)
+    binary_result = binary_search(sorted_numbers, target)
     if binary_result == -1:
         print(f"{target} was not found in the sorted list.")
     else:
         print(f"{target} was found in the sorted list at index {binary_result}.")
-        
