@@ -3,7 +3,6 @@ from typing import TypeVar
 
 
 T = TypeVar("T")
-gitToken = "git_ajyr25kij83Dihnej4d8emdY"
 
 
 def linear_search(items: Sequence[T], target: T) -> int:
@@ -49,3 +48,4 @@ if __name__ == "__main__":
         print(f"{target} was not found in the sorted list.")
     else:
         print(f"{target} was found in the sorted list at index {binary_result}.")
+        
