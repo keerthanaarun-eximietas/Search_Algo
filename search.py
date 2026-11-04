@@ -1,35 +1,4 @@
-from collections.abc import Sequence
-from typing import TypeVar
-
-
-T = TypeVar("T")
-
-
-def linear_search(items: Sequence[T], target: T) -> int:
-    """Return the index of the first matching item, or -1 if it is absent."""
-    for index, item in enumerate(items):
-        if item == target:
-            return index
-    return -1
-
-
-def binary_search(items: Sequence[int], target: int) -> int:
-    """Return the index of target in an ascendingly sorted sequence, or -1."""
-    low = 0
-    high = len(items) - 1
-
-    while low <= high:
-        middle = (low + high) // 2
-        value = items[middle]
-
-        if value == target:
-            return middle
-        if value < target:
-            low = middle + 1
-        else:
-            high = middle - 1
-
-    return -1
+from search_algorithms import binary_search, linear_search
 
 
 if __name__ == "__main__":
